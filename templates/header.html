@@ -1,0 +1,28 @@
+{%load staticfiles%}
+<div class="container">
+        <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+						<a class="navbar-brand" href="http://lihao2333.com"><img src="{%static 'image/logo.png'%}" height="25px" alt=""></a>
+                </div>
+                <div>
+                        <ul class="nav navbar-nav" role="navigation">
+
+                                {% if user.is_authenticated%}
+								<li><a href="{%url 'gen_video'%}"> Create Video</a></li>
+								<li><a href="{%url 'list_video'%}">Video gallery</a></li>
+								<li><a href="{%url 'gen_img'%}">Create Image</a></li>
+								<li><a href="{%url 'list_img'%}">Image gallery</a></li>
+								{% endif %}
+
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                                {% if user.is_authenticated%}
+								<li><a href="#">{{user.username}}</a></li>
+								<li><a href="{%url 'user_logout'%}">Logout</a></li>
+								{% else %}
+                                <li><a href="{% url 'user_login' %}">login</a></li>
+								{% endif %}
+                        </ul>
+                </div>
+        </nav>
+</div>

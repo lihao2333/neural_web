@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="http://necolas.github.io/normalize.css/">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+	div.img
+	  {
+	  margin:3px;
+	  border:1px solid #bebebe;
+	  height:auto;
+	  width:auto;
+	  float:left;
+	  text-align:center;
+	  }
+	div.img img
+	  {
+	  display:inline;
+	  margin:3px;
+	  border:1px solid #bebebe;
+	  }
+	div.img a:hover img
+	  {
+	  border:1px solid #333333;
+	  }
+	div.desc
+	  {
+	  text-align:center;
+	  font-weight:normal;
+	  width:150px;
+	  font-size:12px;
+	  margin:10px 5px 10px 5px;
+	  }
+	</style>
+</head>
+<body>
+		{%include "header.html"%}
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+		{%include "footer.html"%}
+<script src="https://cdn.bootcss.com/jquery3.2.1/jquery.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
+©

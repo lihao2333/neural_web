@@ -1,0 +1,24 @@
+{%extends "base.html"%}
+{%block title%} Login{%endblock%}
+{%block content%}
+<div class="row text-center vertical-middle-cm">
+<form action="" method="post" enctype="multipart/form-data" id="styleform" >{% csrf_token %}
+
+<fieldset>
+
+<legend>上传文件</legend>
+
+<p>
+<input type="file" name="content" />
+<input type="file" name="style" />
+</p>
+
+<p>
+<input type="submit" value="上传"/><br>
+</p>
+
+
+</fieldset>
+
+</div>
+{%endblock%}

@@ -1,0 +1,25 @@
+{%extends "base.html"%}
+{%block title%} Login{%endblock%}
+{%block content%}
+<div class="row text-center vertical-middle-cm">
+<div class="img">
+  <a target="_blank" href="/i/tulip_ballade.jpg">
+  <img src='{{ content_url }}'alt="content貌似没有找到唉" width="360" height="360"/>
+  </a>
+  <div class="desc">原始图像</div>
+</div>
+<div class="img">
+  <a target="_blank" href="/i/tulip_ballade.jpg">
+  <img src="{{ style_url}}" alt="style貌似没有找到唉" width="360" height="360"/>
+  </a>
+  <div class="desc">风格图像</div>
+</div>
+<div class="img">
+  <a target="_blank" href="/i/tulip_flaming_club.jpg">
+  <img src='{{ res_url}}'alt="图像还没有生成, 请稍等" width="360" height="360" />
+  </a>
+  <div class="desc">合成图像</div>
+</div>
+
+</div>
+{%endblock%}

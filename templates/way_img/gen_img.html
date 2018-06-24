@@ -1,0 +1,28 @@
+{%extends "base.html"%}
+{%block title%} Login{%endblock%}
+{%block content%}
+<div class="row text-center vertical-middle-cm">
+<form action="" method="post" enctype="multipart/form-data" id="styleform" >{% csrf_token %}
+
+<fieldset>
+
+<legend>上传文件</legend>
+
+<p>
+<input type="file" name="content" />
+</p>
+
+<p>
+<select name="style" >
+  {% for style in style_list %}
+  <option value="{{style}}">{{style}}</option>
+  {% endfor%}
+</select>
+<input type="submit" value="上传"/><br>
+</p>
+
+
+</fieldset>
+
+</div>
+{%endblock%}
