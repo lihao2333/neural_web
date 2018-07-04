@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return render(request, "info.html",{"info":"hello"})
+    return render(request, "info.html",{"info":"请开始你的表演"})
