@@ -1,0 +1,6 @@
+[submodule "fast-neural-style-tensorflow"]
+	path = fast-neural-style-tensorflow
+	url = git@github.com:lihao2333/fast-neural-style-tensorflow.git
+[submodule "neural-style_diy"]
+	path = neural-style_diy
+	url = git@github.com:lihao2333/neural-style_diy.git
