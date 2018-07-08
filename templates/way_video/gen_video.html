@@ -10,21 +10,49 @@
 
 <div >
   <label>上传内容图片</label>
-<input id=avatar1 type="file" name="content" />
+  <input type="file" id='up_content' name="content" />
 </div>
+
+
 <div >
   <label>上传风格图片</label>
-
-  <input id=avatar2 type="file" name="style" />
+  <input  type="file" id='up_style' name="style" />
 </div>
-<br>
+
+<div class="img" id="image_content">
+  <img src="" width="320" height="320"/>
+  <div class="desc">内容图像</div>
+</div>
+<div class="img" id="image_style">
+  <img src="" width="320" height="320"/>
+  <div class="desc">风格图像</div>
+</div>
+
 <div >
   <input type="submit" value="上传"/>
 <div>
 
 
-
 </fieldset>
 
 </div>
+
+  <script type="text/javascript">
+    document.getElementById('up_content').onchange = function() {
+    var imgFile = this.files[0];
+    var fr = new FileReader();
+    fr.onload = function() {
+        document.getElementById('image_content').getElementsByTagName('img')[0].src = fr.result;
+    };
+    fr.readAsDataURL(imgFile);
+  }; 
+    document.getElementById('up_style').onchange = function() {
+    var imgFile = this.files[0];
+    var fr = new FileReader();
+    fr.onload = function() {
+        document.getElementById('image_style').getElementsByTagName('img')[0].src = fr.result;
+    };
+    fr.readAsDataURL(imgFile);
+  }; 
+</script>
 {%endblock%}

@@ -1,4 +1,6 @@
 {%extends "base.html"%}
+
+{%load staticfiles%}
 {%block title%} Login{%endblock%}
 {%block content%}
 <div class="row text-center vertical-middle-cm">
@@ -10,18 +12,25 @@
 
 <div >
   <label>上传内容图像</label>
-  <input type="file" name="content" />
+  <input type="file" id='up_content' name="content" />
 </div>
-<br>
 
 <div  >
   <label>选择风格模型</label>
-  <select name="style">
+  <select name="style" id="up_style">
   {% for style in style_list %}
   <option value="{{style}}">{{style}}</option>
   {% endfor%}
 </select> 
-</div><br>
+</div>
+<div class="img" id="image_content">
+  <img  src="" width=320 height=320 />
+  <div class="desc">内容图像</div>
+</div>
+<div class="img" id="image_style">
+  <img  src="" width=320 height=320 />
+  <div class="desc">风格图像</div>
+</div>
 
 <div class="a-upload">
 <input type="submit" value="上传"/>
@@ -30,4 +39,22 @@
 </fieldset>
 
 </div>
+
+  <script type="text/javascript">
+    document.getElementById('up_content').onchange = function() {
+    var imgFile = this.files[0];
+    var fr = new FileReader();
+    fr.onload = function() {
+        document.getElementById('image_content').getElementsByTagName('img')[0].src = fr.result;
+    };
+    fr.readAsDataURL(imgFile);
+  }; 
+    document.getElementById('up_style').onchange = function() {
+    var imgFile = this.value;
+	imgFile = imgFile.split(".")[0];
+	imgFile = "/media/styles/"+imgFile+".jpg"
+	console.log(imgFile);
+    document.getElementById('image_style').getElementsByTagName('img')[0].src = imgFile;
+  }; 
+</script>
 {%endblock%}

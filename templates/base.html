@@ -79,6 +79,10 @@ label {
 }
 	</style>
 
+
+{% load staticfiles %}
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery-1.7.1.min.js' %}"></script>
 </head>
 <body>
 		{%include "header.html"%}
@@ -87,8 +91,11 @@ label {
         {% endblock %}
     </div>
 		{%include "footer.html"%}
+
+		<!--
 <script src="https://cdn.bootcss.com/jquery3.2.1/jquery.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>-->
+
 </body>
 </html>
-©
