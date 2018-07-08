@@ -25,8 +25,10 @@ def gen_img(request):
 
     else :
         print(settings.WAY_IMAGE_ROOT)
-        style_list = os.listdir(os.path.join(settings.WAY_IMAGE_ROOT,"models"))
-        print(style_list)
+        style_list = []
+        for style in sorted(os.listdir(os.path.join(settings.WAY_IMAGE_ROOT,"models"))):
+            if style.endswith("ckpt-done"):
+                style_list.append(style)
         return render(request,"way_img/gen_img.html",{"style_list":style_list})
 def list_img(request):
     model = gallaryImg.objects.get(owner=request.user) 
