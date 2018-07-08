@@ -4,5 +4,6 @@ urlpatterns = [
     path('',views.index,name='index'),        
     path('gen_img',views.gen_img,name='gen_img'),        
     path('list_img',views.list_img,name='list_img'),        
+    path('list_img_all',views.list_img_all,name='list_img_all'),        
 
 ]

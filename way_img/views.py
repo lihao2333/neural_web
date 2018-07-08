@@ -4,7 +4,7 @@ from django.conf import settings
 from .models import gallaryImg
 from .forms import gallaryImgForm
 from . import func
-import os
+import os ,re
 
 # Create your views here.
 def index(request):
@@ -15,13 +15,10 @@ def gen_img(request):
         if form.is_valid():
             if 'content' in request.FILES:
                 content = request.FILES['content']
-#                suffix = content.name.split(".")[1]
-#                content.name=str(request.user)+"_content_."+suffix
                 style = request.POST['style']
                 s = gallaryImg(owner=request.user, content=content,style=style)
                 s.save()
                 func.gen_img(s.content.path,s.style)
-#                return render(request, "info.html",{"info":"upload success"})
                 return HttpResponseRedirect("list_img")
         else :
                 return render(request, "info.html",{"info":"choose content image first"})
@@ -38,3 +35,18 @@ def list_img(request):
                 "style_url":settings.MEDIA_URL+"img/%s"%model.style.replace("ckpt-done","jpg"),
                 "res_url":model.content.url.replace('content','res')}
     return render(request,"way_img/list_img.html",content)
+def list_img_all(request):
+    gallery = []
+    basedir = settings.MEDIA_URL+"list_img_all"
+    for img in sorted(os.listdir(os.path.join(settings.MEDIA_ROOT, "list_img_all"))):
+        res = re.search(r'res(.+?)_(.+?).jpg',img)
+        if res : 
+            index = res.group(1)
+            style = res.group(2)
+            gallery.append({
+                "content":"{0}/content{1}.jpg".format(basedir,index),
+                "style":"{0}/{1}.jpg".format(basedir,style),
+                "res":"{0}/{1}".format(basedir,img)
+                })
+    content = {"gallery":gallery}
+    return render(request,"way_img/list_img_all.html",content)
