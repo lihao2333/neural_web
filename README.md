@@ -45,3 +45,13 @@ cd ..
 #### 运行
 * 执行`mux start neural_web`,会自动打开一个tmux的session, 同时里面会自动运行docker
 * 登录`<your ip address>:8000`既可
+
+#### 最终效果
+* 查看视频
+![avatar](readme/video_gallery.png)
+* 创建图片
+![avatar](readme/create_image.png)
+* 查看图片
+![avatar](readme/image_gallery.png)
+* 查看精选图片
+![avatar](readme/image_gallery_all.png)
