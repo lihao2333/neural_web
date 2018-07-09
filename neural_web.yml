@@ -45,7 +45,7 @@ windows:
           --net=host
           -w /workspace
           --entrypoint /bin/bash 
-          lihao2333/intel:v3 
+          lihao2333/intel:v4
           -c "ls;ls ..;python3 manage.py runserver 0.0.0.0:8000"
        -  sleep 3 && docker exec -ti intel /bin/bash
 
