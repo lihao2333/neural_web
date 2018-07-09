@@ -28,7 +28,7 @@ root: .
 # post: tmux -CC attach -t django
 
 windows:
-  - editor:
+  - web:
       layout: main-vertical
       panes:
         - vim
@@ -37,20 +37,31 @@ windows:
       layout: main-vertical
       panes:
        - docker run -it --rm -p 8000:8000 
-         -v `pwd`:/workspace
+          -v `pwd`:/workspace
           -v /Model:/Model
           -v /Dataset:/Dataset
-         --privileged -v /dev:/dev
-         --name intel
-         --net=host
-         -w /workspace
-         --entrypoint /bin/bash 
-         lihao2333/intel:v3 
-         -c "ls;ls ..;python3 manage.py runserver 0.0.0.0:8000"
+          --privileged -v /dev:/dev
+          --name intel
+          --net=host
+          -w /workspace
+          --entrypoint /bin/bash 
+          lihao2333/intel:v3 
+          -c "ls;ls ..;python3 manage.py runserver 0.0.0.0:8000"
+       -  sleep 3 && docker exec -ti intel /bin/bash
+
   - templates:
-      layout: even-horzonal
+      layout: even-horizontal
       panes:
         - cd templates&&vim
           & ls
         - cd templates&&tree -L 1
+  - fNS:
+      layout: even-horziontal
+      panes:
+        - cd fast-neural-style-tensorflow&&ls
+  - NS:
+      layout: even-horziontal
+      panes:
+        - cd neural-style_diy&&ls
+
 
