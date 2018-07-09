@@ -1,7 +1,10 @@
+*.pyc
 media/*
 !media/img
 !media/list_img_all
 !media/styles
 *.meta
 */*.pyc
+*/*/*.pyc
+*/*/*/*.pyc
 
