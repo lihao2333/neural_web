@@ -3,4 +3,5 @@ media/*
 !media/list_img_all
 !media/styles
 *.meta
+*/*.pyc
 

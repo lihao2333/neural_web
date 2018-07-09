@@ -1,7 +1,7 @@
 # ~/.tmuxinator/django.yml
 
-name: django
-root: /home/Proj/Intel/neutrul-style/neural_web
+name: neural_web
+root: .
 
 # Optional tmux socket
 # socket_name: foo
