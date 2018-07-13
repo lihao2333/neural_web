@@ -1,4 +1,5 @@
 *.pyc
+db.sqlite3
 media/*
 !media/img
 !media/list_img_all
