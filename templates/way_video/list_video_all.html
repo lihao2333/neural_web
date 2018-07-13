@@ -1,0 +1,28 @@
+{%extends "base.html"%}
+{%block title%} Login{%endblock%}
+{%block content%}
+<div class="row text-center vertical-middle-cm">
+ {% for tuple in gallery %}
+
+<div class="img">
+  <a target="_blank" href="{{tuple.content}}">
+  <img src='{{tuple.content}}'alt="content貌似没有找到唉" width="361" height="320"/>
+  </a>
+  <div class="desc">原始图像</div>
+</div>
+<div class="img">
+  <a target="_blank" href="{{tuple.style}}">
+  <img src="{{tuple.style}}" alt="style貌似没有找到唉" width="320" height="320"/>
+  </a>
+  <div class="desc">风格图像</div>
+</div>
+<div class="img">
+  <a target="_blank" href="{{tuple.video}}">
+  <video src='{{tuple.video}}' autoplay="autoplay" loop="loop" alt="图像还没有生成, 请稍等" width="320" height="320" />
+  </a>
+  <div class="desc">合成视频</div>
+</div>
+
+{% endfor %}
+</div>
+{%endblock%}

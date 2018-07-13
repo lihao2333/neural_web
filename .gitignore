@@ -3,6 +3,7 @@ media/*
 !media/img
 !media/list_img_all
 !media/styles
+*.swp
 *.meta
 */*.pyc
 */*/*.pyc

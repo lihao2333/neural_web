@@ -14,7 +14,7 @@ def gen_video(content,style):
     print(cmd)
     os.system(cmd)
 def gen_video2(dirname):
-    cmd="cd {0};pwd;ffmpeg -y -r 10 -i res_%04d.png  output.mp4; ".format(dirname)
+    cmd="cd {0};pwd;ffmpeg -y -r 10 -i res_%04d.jpg  output.mp4; ".format(dirname)
     os.system(cmd)
 if __name__ == "__main__":
     gen_img(1,1)

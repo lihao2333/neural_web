@@ -51,3 +51,21 @@ def list_video(request):
         content["res_url"] =model.content.url
 
     return render(request, "way_video/list_video.html",content)
+
+def list_video_all(request):
+    gallery = []
+    basedir = settings.MEDIA_URL+"list_video_all"
+    for item in sorted(os.listdir(os.path.join(settings.MEDIA_ROOT, "list_video_all"))):
+        video_match = re.search(r'video_(.+).mp4',item)
+        if video_match:
+            index = video_match.group(1)
+            content = "content_{0}.jpg".format(index)
+            style = "style_{0}.jpg".format(index)
+            video = "video_{0}.mp4".format(index)
+            gallery.append({
+                "content":"{0}/{1}".format(basedir,content),
+                "style":"{0}/{1}".format(basedir,style),
+                "video":"{0}/{1}".format(basedir,video)
+                })
+    content = {"gallery":gallery}
+    return render(request,"way_video/list_video_all.html",content)
