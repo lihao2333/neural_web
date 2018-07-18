@@ -34,7 +34,7 @@ $Proj/media/img_list_all --> /Dataset/style_transfer
 或者拥有我们制作的镜像文件`intel:v4.tar`通过执行`docker load<intel:v4.tar`来还原镜像
 
 ## 如何使用
-#### 为需要的数据，模型做软连接
+#### 安装
 
 * 递归克隆项目
 
@@ -42,13 +42,32 @@ $Proj/media/img_list_all --> /Dataset/style_transfer
 git clone --recurse-submodules git@github.com:lihao2333/neural_web.git
 cd neural_web
 ```
-
-* 为`tmuxinator`制作软连接
-
-```
-ln -sf `pwd`/neural_web.yml ~/.tmuxinator/ 
-```
-
+* 配置`tmuxinator`
+	* for ubuntu:16.04
+	```
+	apt-get install tmux
+	apt-get install tmuxinator
+	mkdir ~/.tmuxinator
+        ln -sf `pwd`/neural_web.yml ~/.tmuxinator/ 
+	```
+	* for mac
+	```
+	brew install tmux
+	brew install tmuxinator
+	mkdir ~/.config/tmuxinator
+        ln -sf `pwd`/neural_web.yml ~/.config/tmuxinator/ 	
+	```
+	* 最后记得在`~/.bashrc`中添加
+	```
+	export EDITOR="vim"
+	alias mux="tmuxinator"
+	```
+        * 然后执行
+	```
+	source ~/.bashrc
+	mux list
+	```
+	* 如果出现`neural_web`则说明安装成功
 #### 运行
 * 执行`mux start neural_web`,会自动打开一个tmux的session, 同时里面会自动运行docker
 * 登录`<your ip address>:8000`既可
