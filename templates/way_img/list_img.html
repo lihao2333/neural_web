@@ -1,25 +1,24 @@
 {%extends "base.html"%}
 {%block title%} Login{%endblock%}
 {%block content%}
-<div class="row text-center vertical-middle-cm">
-<div class="img">
-  <a target="_blank" href="{{content_url}}">
-  <img src='{{ content_url }}'alt="content貌似没有找到唉" width="361" height="320"/>
-  </a>
-  <div class="desc">原始图像</div>
-</div>
-<div class="img">
-  <a target="_blank" href="{{style_url}}">
-  <img src="{{ style_url}}" alt="style貌似没有找到唉" width="320" height="320"/>
-  </a>
-  <div class="desc">风格图像</div>
-</div>
-<div class="img">
-  <a target="_blank" href="{{res_url}}">
-  <img src='{{ res_url}}'alt="图像还没有生成, 请稍等" width="320" height="320" />
-  </a>
-  <div class="desc">合成图像</div>
-</div>
-
+<div class=" col-md-offset-1 " style="color: white">
+  <div class="img col-md-3 ">
+    <a target="_blank" href="{{content_url}}">
+    <img src='{{ content_url }}'alt="content貌似没有找到唉" width="361" height="320"/>
+    </a>
+    <div class="desc text-center">原始图像</div>
+  </div>
+  <div class="img col-md-3">
+    <a target="_blank" href="{{style_url}}">
+    <img src="{{ style_url}}" alt="style貌似没有找到唉" width="320" height="320"/>
+    </a>
+    <div class="desc text-center">风格图像</div>
+  </div>
+  <div class="img col-md-3">
+    <a target="_blank" href="{{res_url}}">
+    <img src='{{ res_url}}'alt="图像还没有生成, 请稍等" width="320" height="320" />
+    </a>
+    <div class="desc text-center">合成图像</div>
+  </div>
 </div>
 {%endblock%}

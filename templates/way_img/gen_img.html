@@ -3,33 +3,81 @@
 {%load staticfiles%}
 {%block title%} Login{%endblock%}
 {%block content%}
-<div class="row text-center vertical-middle-cm">
+<style type="text/css">
+ .b-upload {
+    padding: 4px 10px;
+    height: 30px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #eff1e5;
+    background-color:rgb(83, 142, 138);
+    border: 0px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
+ 
+.b-upload  input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+.b-upload select{
+   position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+ 
+.b-upload:hover {
+    color: #eff1e5;
+    background: #65c3d6;
+    text-decoration: none
+}
+</style>
+
+<div class="row col-md-8 col-md-offset-2 ">
 <form action="" method="post" enctype="multipart/form-data" id="styleform" >{% csrf_token %}
 
-<fieldset>
+<fieldset >
+<legend class="text-center vertical-middle-cm" style="color: #eff1e5; font-size: 24px">准备创建图片</legend>
+<div class="row"></div>
 
-<legend>准备创建图片</legend>
-
-<div >
+<div class="img col-md-4 " id="image_content" style="margin: 10px; margin-right:25px;margin-left:20px" >
+  <div class="row" > 
   <label>上传内容图像</label>
-  <input type="file" id='up_content' name="content" />
+  <a href="javascript：;" class="b-upload">
+  <input type="file" id='up_content' name="content"/>点击上传内容图像
+  </a>
+</div>
+  <img  src="{%static 'css_img/ep1.jpg' %}" width=320 height=320 />
+  <div class="desc" style="color: rgb(233,233,233)">内容图像</div>
 </div>
 
-<div  >
+
+<div class="img col-md-4 " id="image_style" style="margin: 10px; margin-left:25px;">
+  <div class="row" >
   <label>选择风格模型</label>
+  <a href="javascript：;" class="b-upload">
   <select name="style" id="up_style">
   {% for style in style_list %}
   <option value="{{style}}">{{style}}</option>
   {% endfor%}
-</select> 
+  </select> 点击选择风格模型
+</a>
 </div>
-<div class="img" id="image_content">
-  <img  src="" width=320 height=320 />
-  <div class="desc">内容图像</div>
-</div>
-<div class="img" id="image_style">
-  <img  src="" width=320 height=320 />
-  <div class="desc">风格图像</div>
+  <img  src="{%static 'css_img/ep2.jpg' %}" width=320 height=320 />
+  <div class="desc" style="color: rgb(233,233,233)">风格图像</div>
 </div>
 
 <div class="a-upload">

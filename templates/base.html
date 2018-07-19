@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -8,6 +9,14 @@
     <link rel="stylesheet" href="http://necolas.github.io/normalize.css/">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<style>
+    @font-face{
+    font-family: 'YaHei Consolas Hybrid';
+    src : url('../fonts/yaheiconsolashybrid.ttf');
+    }
+    body{
+        font-family:"Times New Roman", Times, serif;
+        background-color: rgb(33,33,33);
+    }
 	div.img
 	  {
 	  margin:3px;
@@ -21,6 +30,9 @@
 	  {
 	  display:inline;
 	  margin:3px;
+      max-width: 100%;
+    
+      max-height: 100%;
 	  border:1px solid #bebebe;
 	  }
 	div.img a:hover img
@@ -35,62 +47,107 @@
 	  font-size:12px;
 	  margin:px 2px 3px 10px;
 	  }
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
+    input:-webkit-autofill {
+        -webkit-animation: autofill-fix 1s infinite;
+    }
 
-input[type=submit] {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+    @-webkit-keyframes autofill-fix {
+        from {
+            color: white;
+            background-color: transparent
+        }
+        to {
+            color: white;
+            background-color: transparent
+        }
+    }
 
-input[type=submit]:hover {
-    background-color: #45a049;
-}
+    input[type=text],input[type=password]{
+        color: white;
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;  
+    }
+    
 
-div {
-    border-radius: 5px;
-    padding: 5px;
-}
-legend {
-	 text-align:center;
-    margin-top: 1rem;
-    display: block;
-    font-size: 1.8rem;
-}
+    input[type=submit] {
+        width: 100%;
+        background-color: #b79176d4;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    input[type=submit]:hover {
+        background-color:#dddbd1eb;
+        color:#569c9a;
+        font-size: 16px;
+    }
+    #bj{
+        background-image: url({% static "css_img/background.jpg" %});
+        background-size:cover;
+    }
+    #login{
+    height: 150%;
+    background-color: rgb(0, 0, 0, 0.35);
+    box-shadow: 3px 3px 2px hsla(0,0%,0%,.4);
+    padding: 30px;
+    /*opacity: 0.5;*/
+    }
 
-label {
-	 text-align:left;
-    margin-top: 1rem;
-    display: block;
-    font-size: 1.8rem;
-}
+    div {
+        border-radius: 5px;
+        padding: 5px;
+    }
+    legend {
+    	 text-align:center;
+        margin-top: 1rem;
+        display: block;
+        font-size: 1.8rem;
+    }
+
+    label {
+        color:rgb(233,233,233);
+    	text-align:left;
+        margin-top: 1rem;
+        display: block;
+        font-size: 1.8rem;
+    }
+    .login_h1{
+        color:rgb(233,233,233);
+    }
+    #bj1{
+        background-image: url({% static "css_img/bj1.jpg" %});
+        background-size:cover;
+    }
+    #bj2{
+        background-image: url({% static "css_img/bj2.jpg" %});
+        background-size:cover;
+    }
+
+
 	</style>
 
 
-{% load staticfiles %}
+
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/jquery-1.7.1.min.js' %}"></script>
 </head>
 <body>
 		{%include "header.html"%}
-    <div class="container">
+    <div class="container col-md-12 " >
         {% block content %}
         {% endblock %}
     </div>
-		{%include "footer.html"%}
+
+		<!-- {%include "footer.html"%} -->
 
 		<!--
 <script src="https://cdn.bootcss.com/jquery3.2.1/jquery.js"></script>

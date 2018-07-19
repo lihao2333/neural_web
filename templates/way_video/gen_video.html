@@ -1,30 +1,74 @@
 {%extends "base.html"%}
+{%load staticfiles%}
 {%block title%} Login{%endblock%}
 {%block content%}
-<div class="row text-center vertical-middle-cm">
+<style type="text/css">
+ .b-upload {
+    padding: 4px 10px;
+    height: 30px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #eff1e5;
+    background-color:rgb(83, 142, 138);
+    border: 0px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
+ 
+.b-upload  input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+.b-upload select{
+   position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+ 
+.b-upload:hover {
+    color: #eff1e5;
+    background: #65c3d6;
+    text-decoration: none
+}
+</style>
+<div class="row text-center col-md-8 col-md-offset-2">
 <form action="" method="post" enctype="multipart/form-data" id="styleform" >{% csrf_token %}
 
 <fieldset>
+<legend  style="color: #eff1e5; font-size: 24px">准备创建视频</legend>
 
-<legend>准备创建视频</legend>
-
-<div >
-  <label>上传内容图片</label>
-  <input type="file" id='up_content' name="content" />
-</div>
-
-
-<div >
-  <label>上传风格图片</label>
-  <input  type="file" id='up_style' name="style" />
-</div>
-
-<div class="img" id="image_content">
-  <img src="" width="320" height="320"/>
+<div class="img col-md-4 " id="image_content" style="margin: 10px; margin-right:25px;margin-left:20px">
+  <div class="row" >
+    <label>上传内容图片</label>
+    <a href="javascript：;" class="b-upload">
+    <input type="file" id='up_content' name="content" />点击上传内容图片
+    </a>
+  </div>
+  <img src="{%static 'css_img/ep1.jpg' %}"  width="320" height="320"/>
   <div class="desc">内容图像</div>
 </div>
-<div class="img" id="image_style">
-  <img src="" width="320" height="320"/>
+
+<div class="img col-md-4 " id="image_style"  style="margin: 10px; margin-left:25px">
+  <div class="row" >
+    <label>上传风格图片</label>
+    <a href="javascript：;" class="b-upload">
+    <input  type="file" id='up_style' name="style" />点击上传风格图片
+    </a>
+  </div>
+  <img src="{%static 'css_img/ep2.jpg' %}"  width="320" height="320"/>
   <div class="desc">风格图像</div>
 </div>
 

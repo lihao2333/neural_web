@@ -1,11 +1,16 @@
 {%extends "base.html"%}
+
 {%block title%} Login{%endblock%}
 {%block content%}
-<div class="row text-center vertical-middle-cm">
-        <h1>Login</h1>
-        <p>Inpt you username and password</p>
+
+<div class="row col-md-8 col-sm-10 col-md-offset-2 col-sm-offset-1" id='bj' style="padding: 60px">
+    <div id='login' class="text-center col-md-5 col-sm-8 col-md-offset-7 col-sm-offset-2" >
+        <h1 class="login_h1">Login</h1>
+        <!-- <p>Inpt you username and password</p> -->
 		<form class="form-horizontal" action="." method="post">{%csrf_token%}
-				{{form.as_p}}
-				<input type="submit" value="Login"></form>
+		{{form.as_p}}
+		<input type="submit" value="Login">
+        </form>
+    </div>
 </div>
 {%endblock%}
