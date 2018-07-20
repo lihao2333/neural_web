@@ -34,6 +34,11 @@ $Proj/media/img_list_all --> /Dataset/style_transfer
 git clone --recurse-submodules -b accelerate git@github.com:lihao2333/neural_web.git
 cd neural_web
 ```
+#### 制作镜像　
+```
+docker build -t lihao2333/superintel:1.0 .
+```
+这里`lihao2333/superintel:1.0`可以任意起，但是如果你修改的话，请在`neural_web.yml`中进行对应的替换
 #### 配置tmuxinator
 ubuntu16.04:
 ```
