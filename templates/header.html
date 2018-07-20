@@ -1,30 +1,60 @@
 {%load staticfiles%}
-<div class="container">
-        <nav class="navbar navbar-default" role="navigation">
+<style>
+.header{
+width: 100%;
+border-radius: 0px;
+}
+.myheader{
+    background-color:rgb(83, 142, 138);
+    border-radius: 0px;
+  /*  box-shadow:5px 10px 5px rgb(107,107,107);   */
+}
+
+.navg {
+color: #eff1e5;
+font-size: 16px;
+list-style-type: none;
+
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 20px 20px;
+}
+.nav>li>a:hover {
+   background-color: #65c3d6;
+   color: #eff1e5;
+}
+#bj{
+        background-image: url({% static "css_img/background.jpg" %});
+        background-size:cover;
+    }
+</style>
+<div class="header">
+        <nav class="navbar myheader" role="navigation">
                 <div class="navbar-header">
-						<a class="navbar-brand" href="http://lihao2333.com"><img src="{%static 'image/logo.png'%}" height="25px" alt=""></a>
+                        <a class="navbar-brand" href="http://lihao2333.com"><img src="{%static 'css_img/logo.png'%}" height="30px" alt=""></a>
                 </div>
-                <div>
-                        <ul class="nav navbar-nav" role="navigation">
+                
+                <ul class="nav navbar-nav" role="navigation">
+                {% if user.is_authenticated%}
+                <li><a class='navg' href="{%url 'gen_video'%}"> Create Video</a></li>
+                <li><a class='navg' href="{%url 'list_video'%}">Video gallery</a></li>
+                <li><a class='navg' href="{%url 'list_video_all'%}">Video gallery all</a></li>
+                <li><a class='navg' href="{%url 'gen_img'%}">Create Image</a></li>
+                <li><a class='navg' href="{%url 'list_img'%}">Image gallery</a></li>
+                <li><a class='navg' href="{%url 'list_img_all'%}">Image gallery all</a></li>
+                {% endif %}
 
-                                {% if user.is_authenticated%}
-								<li><a href="{%url 'gen_video'%}"> Create Video</a></li>
-								<li><a href="{%url 'list_video'%}">Video gallery</a></li>
-								<li><a href="{%url 'list_video_all'%}">Video gallery all</a></li>
-								<li><a href="{%url 'gen_img'%}">Create Image</a></li>
-								<li><a href="{%url 'list_img'%}">Image gallery</a></li>
-								<li><a href="{%url 'list_img_all'%}">Image gallery all</a></li>
-								{% endif %}
-
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                                {% if user.is_authenticated%}
-								<li><a href="#">{{user.username}}</a></li>
-								<li><a href="{%url 'user_logout'%}">Logout</a></li>
-								{% else %}
-                                <li><a href="{% url 'user_login' %}">login</a></li>
-								{% endif %}
-                        </ul>
-                </div>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated%}
+                <li><a class='navg' href="#">{{user.username}}</a></li>
+                <li><a class='navg' href="{%url 'user_logout'%}">Logout</a></li>
+                {% else %}
+                <li><a class='navg' href="{% url 'user_login' %}">Login</a></li>
+                {% endif %}
+                </ul>
+        
         </nav>
 </div>
