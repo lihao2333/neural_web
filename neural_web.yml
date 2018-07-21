@@ -36,15 +36,15 @@ windows:
   - server:
       layout: main-vertical
       panes:
-       - docker run -it --rm -p 8000:8000 
+       - nvidia-docker run -it --rm -p 8000:8000 
           -v `pwd`:/workspace
           -v /Model:/Model
           -v /Dataset:/Dataset
           --privileged -v /dev:/dev
-          --name intel
+          --name superintel
           -w /workspace
           --entrypoint /bin/bash 
-          lihao2333/intel:v4
+          lihao2333/superintel:1.0
           -c "ls;ls ..;python3 manage.py runserver 0.0.0.0:8000"
        -  sleep 3 && docker exec -ti intel /bin/bash
 

@@ -4,3 +4,6 @@
 [submodule "neural-style_diy"]
 	path = neural-style_diy
 	url = git@github.com:lihao2333/neural-style_diy.git
+[submodule "neural-style"]
+	path = neural-style
+	url = git@github.com:lihao2333/neural-style.git
