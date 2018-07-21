@@ -31,7 +31,7 @@ windows:
   - web:
       layout: main-vertical
       panes:
-        - vim
+        - ifconfig
         - tree -L 1
   - server:
       layout: main-vertical
@@ -46,7 +46,7 @@ windows:
           --entrypoint /bin/bash 
           lihao2333/superintel:1.0
           -c "ls;ls ..;python3 manage.py runserver 0.0.0.0:8000"
-       -  sleep 3 && docker exec -ti intel /bin/bash
+       -  sleep 3 && docker exec -ti superintel /bin/bash
 
   - templates:
       layout: even-horizontal

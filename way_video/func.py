@@ -23,10 +23,15 @@ def gen_video(content,style):
             -content_image {0} \
             -style_image {1}\
             -output_image {2}\
-            -print_iter 50\
+            -print_iter 1\
             -save_iter 1\
             -image_size 512\
-            -optimizer 'adam'\
+            -optimizer 'lbfgs'\
+            -num_iterations 1000\
+            -original_colors 0\
+            -content_weight 8e0\
+            -style_weight 5e1\
+            -init 'image'\
 ".format(content,style,output)
     print(cmd)
     os.system(cmd)
@@ -35,8 +40,7 @@ def gen_video2(dirname):
     print(dirname)
     print("hi")
     cmd="\
-./alignment {0};\
-cd {0};pwd;ffmpeg -y -r 10 -i res_%d.jpg  output.mp4; ".format(dirname)
+cd {0};pwd;ffmpeg -y -r 50 -i res_%d.jpeg  output.mp4||cd {0};pwd;ffmpeg -y -r 50 -i res_%d.jpg  output.mp4; ".format(dirname)
     os.system(cmd)
 if __name__ == "__main__":
     gen_img(1,1)
