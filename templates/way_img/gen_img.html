@@ -22,7 +22,7 @@
  
 .b-upload  input {
     position: absolute;
-    font-size: 100px;
+    font-size: 18px;
     right: 0;
     top: 0;
     opacity: 0;
@@ -30,8 +30,8 @@
     cursor: pointer
 }
 .b-upload select{
-   position: absolute;
-    font-size: 100px;
+    position: absolute;
+    font-size: 16px;
     right: 0;
     top: 0;
     opacity: 0;
@@ -46,14 +46,14 @@
 }
 </style>
 
-<div class="row col-md-8 col-md-offset-2 ">
+<div class="row col-md-8 col-sm-10 col-md-offset-2 col-sm-offset-1">
 <form action="" method="post" enctype="multipart/form-data" id="styleform" >{% csrf_token %}
 
 <fieldset >
 <legend class="text-center vertical-middle-cm" style="color: #eff1e5; font-size: 24px">准备创建图片</legend>
 <div class="row"></div>
 
-<div class="img col-md-4 " id="image_content" style="margin: 10px; margin-right:25px;margin-left:20px" >
+<div class="img col-md-4 col-sm-5 col-md-offset-4 " id="image_content" style="margin: 10px; margin-right:25px;margin-left:20px" >
   <div class="row" > 
   <label>上传内容图像</label>
   <a href="javascript：;" class="b-upload">
@@ -65,16 +65,16 @@
 </div>
 
 
-<div class="img col-md-4 " id="image_style" style="margin: 10px; margin-left:25px;">
+<div class="img col-md-4 col-sm-5 col-md-offset-4" id="image_style" style="margin: 10px; margin-left:25px;">
   <div class="row" >
   <label>选择风格模型</label>
-  <a href="javascript：;" class="b-upload">
+  <div class="b-upload">
   <select name="style" id="up_style">
   {% for style in style_list %}
-  <option value="{{style}}">{{style}}</option>
+    <option value="{{style}}">{{style}}</option>
   {% endfor%}
   </select> 点击选择风格模型
-</a>
+</div >
 </div>
   <img  src="{%static 'css_img/ep2.jpg' %}" width=320 height=320 />
   <div class="desc" style="color: rgb(233,233,233)">风格图像</div>

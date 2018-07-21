@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://127.0.0.1:8000/way_img/gen_img -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Login</title>
+    <link rel="stylesheet" href="./Login_files/saved_resource">
+    <link rel="stylesheet" href="./Login_files/bootstrap_3.3.7_css_bootstrap.min.css">
+	<style>
+    @font-face{
+    font-family: 'YaHei Consolas Hybrid';
+    src : url('../fonts/yaheiconsolashybrid.ttf');
+    }
+    body{
+        font-family:"Times New Roman", Times, serif;
+        background-color: rgb(33,33,33);
+    }
+	div.img
+	  {
+	  margin:3px;
+	  border:1px solid #bebebe;
+	  height:auto;
+	  width:auto;
+	  float:left;
+	  text-align:center;
+	  }
+	div.img img
+	  {
+	  display:inline;
+	  margin:3px;
+      max-width: 100%;
+    
+      max-height: 100%;
+	  border:1px solid #bebebe;
+	  }
+	div.img a:hover img
+	  {
+	  border:2px solid #333333;
+	  }
+	div.desc
+	  {
+	  text-align:center;
+	  font-weight:normal;
+	  width:300px;
+	  font-size:12px;
+	  margin:px 2px 3px 10px;
+	  }
+    input:-webkit-autofill {
+        -webkit-animation: autofill-fix 1s infinite;
+    }
+
+    @-webkit-keyframes autofill-fix {
+        from {
+            color: white;
+            background-color: transparent
+        }
+        to {
+            color: white;
+            background-color: transparent
+        }
+    }
+
+    input[type=text],input[type=password]{
+        color: white;
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;  
+    }
+    
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #b79176d4;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    input[type=submit]:hover {
+        background-color:#dddbd1eb;
+        color:#569c9a;
+        font-size: 16px;
+    }
+    #bj{
+        background-image: url(/static/css_img/background.jpg);
+        background-size:cover;
+    }
+    #login{
+    height: 150%;
+    background-color: rgb(0, 0, 0, 0.35);
+    box-shadow: 3px 3px 2px hsla(0,0%,0%,.4);
+    padding: 30px;
+    /*opacity: 0.5;*/
+    }
+
+    div {
+        border-radius: 5px;
+        padding: 5px;
+    }
+    legend {
+    	 text-align:center;
+        margin-top: 1rem;
+        display: block;
+        font-size: 1.8rem;
+    }
+
+    label {
+        color:rgb(233,233,233);
+    	text-align:left;
+        margin-top: 1rem;
+        display: block;
+        font-size: 1.8rem;
+    }
+    .login_h1{
+        color:rgb(233,233,233);
+    }
+    #bj1{
+        background-image: url(/static/css_img/bj1.jpg);
+        background-size:cover;
+    }
+    #bj2{
+        background-image: url(/static/css_img/bj2.jpg);
+        background-size:cover;
+    }
+
+
+	</style>
+
+
+
+<script src="./Login_files/bootstrap.min.js"></script>
+<script type="text/javascript" src="./Login_files/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+		
+<style>
+.header{
+width: 100%;
+border-radius: 0px;
+}
+.myheader{
+    background-color:rgb(83, 142, 138);
+    border-radius: 0px;
+  /*  box-shadow:5px 10px 5px rgb(107,107,107);   */
+}
+
+.navg {
+color: #eff1e5;
+font-size: 16px;
+list-style-type: none;
+
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 20px 20px;
+}
+.nav>li>a:hover {
+   background-color: #65c3d6;
+   color: #eff1e5;
+}
+#bj{
+        background-image: url(/static/css_img/background.jpg);
+        background-size:cover;
+    }
+</style>
+<div class="header">
+        <nav class="navbar myheader" role="navigation">
+                <div class="navbar-header">
+                        <a class="navbar-brand" href="http://lihao2333.com/"><img src="./Login_files/logo.png" height="30px" alt=""></a>
+                </div>
+                
+                <ul class="nav navbar-nav" role="navigation">
+                
+                <li><a class="navg" href="http://127.0.0.1:8000/way_video/gen_video"> Create Video</a></li>
+                <li><a class="navg" href="http://127.0.0.1:8000/way_video/list_video">Video gallery</a></li>
+                <li><a class="navg" href="http://127.0.0.1:8000/way_video/list_video_all">Video gallery all</a></li>
+                <li><a class="navg" href="http://127.0.0.1:8000/way_img/gen_img">Create Image</a></li>
+                <li><a class="navg" href="http://127.0.0.1:8000/way_img/list_img">Image gallery</a></li>
+                <li><a class="navg" href="http://127.0.0.1:8000/way_img/list_img_all">Image gallery all</a></li>
+                
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                
+                <li><a class="navg" href="http://127.0.0.1:8000/way_img/gen_img#">geek</a></li>
+                <li><a class="navg" href="http://127.0.0.1:8000/account/logout/">Logout</a></li>
+                
+                </ul>
+        
+        </nav>
+</div>
+
+    <div class="container col-md-12 ">
+        
+<style type="text/css">
+ .b-upload {
+    padding: 4px 10px;
+    height: 30px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #eff1e5;
+    background-color:rgb(83, 142, 138);
+    border: 0px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
+ 
+.b-upload  input {
+    position: absolute;
+    font-size: 18px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+.b-upload select{
+    position: absolute;
+    font-size: 16px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+ 
+.b-upload:hover {
+    color: #eff1e5;
+    background: #65c3d6;
+    text-decoration: none
+}
+</style>
+
+<div class="row col-md-8 col-md-offset-2 ">
+<form action="http://127.0.0.1:8000/way_img/gen_img" method="post" enctype="multipart/form-data" id="styleform"><input type="hidden" name="csrfmiddlewaretoken" value="SaVUIrvMSUwq4bsugtKg4iBcSdmGv8iYgSYjUE3Td2TMhp4GylT1Nkx8Ti5FewnF">
+
+<fieldset>
+<legend class="text-center vertical-middle-cm" style="color: #eff1e5; font-size: 24px">准备创建图片</legend>
+<div class="row"></div>
+
+<div class="img col-md-4 " id="image_content" style="margin: 10px; margin-right:25px;margin-left:20px">
+  <div class="row"> 
+  <label>上传内容图像</label>
+  <a href="http://127.0.0.1:8000/way_img/javascript%EF%BC%9A;" class="b-upload">
+  <input type="file" id="up_content" name="content">点击上传内容图像
+  </a>
+</div>
+  <img src="./Login_files/ep1.jpg" width="320" height="320">
+  <div class="desc" style="color: rgb(233,233,233)">内容图像</div>
+</div>
+
+
+<div class="img col-md-4 " id="image_style" style="margin: 10px; margin-left:25px;">
+  <div class="row">
+  <label>选择风格模型</label>
+  <div class="b-upload">
+  <select name="style" id="up_style">
+  
+    <option value="cubist.ckpt-done">cubist.ckpt-done</option>
+  
+    <option value="denoised_starry.ckpt-done">denoised_starry.ckpt-done</option>
+  
+    <option value="feathers.ckpt-done">feathers.ckpt-done</option>
+  
+    <option value="mosaic.ckpt-done">mosaic.ckpt-done</option>
+  
+    <option value="scream.ckpt-done">scream.ckpt-done</option>
+  
+    <option value="udnie.ckpt-done">udnie.ckpt-done</option>
+  
+    <option value="wave.ckpt-done">wave.ckpt-done</option>
+  
+  </select> 点击选择风格模型
+</div>
+</div>
+  <img src="./Login_files/mosaic.jpg" width="320" height="320">
+  <div class="desc" style="color: rgb(233,233,233)">风格图像</div>
+</div>
+
+<div class="a-upload">
+<input type="submit" value="上传">
+</div>
+
+</fieldset>
+
+</form></div>
+
+  <script type="text/javascript">
+    document.getElementById('up_content').onchange = function() {
+    var imgFile = this.files[0];
+    var fr = new FileReader();
+    fr.onload = function() {
+        document.getElementById('image_content').getElementsByTagName('img')[0].src = fr.result;
+    };
+    fr.readAsDataURL(imgFile);
+  }; 
+    document.getElementById('up_style').onchange = function() {
+    var imgFile = this.value;
+	imgFile = imgFile.split(".")[0];
+	imgFile = "/media/styles/"+imgFile+".jpg"
+	console.log(imgFile);
+    document.getElementById('image_style').getElementsByTagName('img')[0].src = imgFile;
+  }; 
+</script>
+
+    </div>
+
+		<!-- <div class="container">
+        <hr>
+        <p class="text-center">copy right www.lihao2333.com</p>
+</div>
+ -->
+
+		<!--
+<script src="https://cdn.bootcss.com/jquery3.2.1/jquery.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>-->
+
+
+
+</body></html>
